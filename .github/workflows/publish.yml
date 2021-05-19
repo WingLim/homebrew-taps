@@ -1,0 +1,17 @@
+name: Trigger Publish
+on:
+  pull_request_target:
+    types:
+      - labeled
+jobs:
+  pr-pull:
+    if: contains(github.event.pull_request.labels.*.name, 'pr-pull')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Run publish
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
+        run: brew pr-publish --verbose --branch="main" --autosquash --tap=$GITHUB_REPOSITORY ${{github.event.pull_request.number}}
