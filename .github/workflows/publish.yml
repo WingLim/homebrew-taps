@@ -13,5 +13,5 @@ jobs:
 
       - name: Run publish
         env:
-          HOMEBREW_GITHUB_API_TOKEN: ${{github.token}}
+          HOMEBREW_GITHUB_API_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
         run: brew pr-publish --verbose --branch="main" --autosquash --tap=$GITHUB_REPOSITORY ${{github.event.pull_request.number}}
