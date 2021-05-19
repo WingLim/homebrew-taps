@@ -8,7 +8,7 @@ class Nali < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/winglim/taps"
-    sha256 cellar: :any_skip_relocation, catalina: "c0debb14287e471a302abe2ce2663670bffeb88c816f2718a5a375e5a097dec8"
+    sha256 cellar: :any_skip_relocation, catalina: "d5c3c67a68827949bdea8597f29b7c49b8e7e77e88373a2afe5e04349bb980e2"
   end
 
   depends_on "go" => :build
