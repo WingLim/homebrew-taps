@@ -8,7 +8,7 @@ class Micfix < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/winglim/taps"
-    sha256 cellar: :any_skip_relocation, catalina: "87659fc44e0ca91fef2b11581956a92c005552af66771938de1c8be173452fb7"
+    sha256 cellar: :any_skip_relocation, catalina: "34abd1ae69816ffe499328af2c7f6d5d923cbcc9935aac5b2c2bf3dae144d5ce"
   end
 
   depends_on xcode: :build
