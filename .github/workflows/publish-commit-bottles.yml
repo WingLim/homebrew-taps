@@ -17,10 +17,11 @@ jobs:
       - name: Post comment once started
         uses: Homebrew/actions/post-comment@master
         with:
-          token: ${{github.token}}
+          token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
           issue: ${{github.event.inputs.pull_request}}
           body: ":shipit: @${{github.actor}} has [triggered a merge](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
           bot_body: ":robot: A scheduled task has [triggered a merge](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
+          bot: LimxBot
       
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -60,17 +61,21 @@ jobs:
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
         with:
-          token: ${{github.token}}
+          token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
           branch: main
+        env:
+          GIT_COMMITTER_NAME: LimxBot
+          GIT_COMMITTER_EMAIL: 84507948+LimxBot@users.noreply.github.com
       
       - name: Post comment on failure
         if: ${{!success()}}
         uses: Homebrew/actions/post-comment@master
         with:
-          token: ${{github.token}}
+          token: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
           issue: ${{github.event.inputs.pull_request}}
           body: ":warning: @${{github.actor}} bottle publish [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
           bot_body: ":warning: Bottle publish [failed](${{github.event.repository.html_url}}/actions/runs/${{github.run_id}})."
+          bot: LimxBot
 
       - name: Unlink workspace
         run: |
