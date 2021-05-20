@@ -3,7 +3,7 @@ class Micfix < Formula
   homepage "https://github.com/WingLim/MicFix"
   url "https://github.com/WingLim/MicFix.git",
       tag:      "v1.1.3",
-      revision: "e38a3746f59b610d7c2e015f57fe7ad93424715a"
+      revision: "9337514ef3aee3e320bcce56de4985a474daf715"
   license "MIT"
 
   bottle do
