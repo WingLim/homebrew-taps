@@ -2,8 +2,8 @@ class Micfix < Formula
   desc "Fix Headset/Headphone Micphone in Hackintosh with AppleALC"
   homepage "https://github.com/WingLim/MicFix"
   url "https://github.com/WingLim/MicFix.git",
-      tag:      "v1.1.2",
-      revision: "ea2ae830e699b524290fa4b001e56f6546e57ee8"
+      tag:      "v1.1.3",
+      revision: "9337514ef3aee3e320bcce56de4985a474daf715"
   license "MIT"
 
   bottle do
