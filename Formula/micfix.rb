@@ -14,8 +14,8 @@ class Micfix < Formula
   depends_on xcode: :build
 
   def install
-    xcodebuild "-configuration", "Release", "SYMROOT=build"
-    bin.install "build/Release/MicFix"
+    system "swift", "build", "--disable-sandbox", "-c", "release"
+    bin.install ".build/release/MicFix"
   end
 
   plist_options manual: "MicFix"
