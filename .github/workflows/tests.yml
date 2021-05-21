@@ -8,6 +8,7 @@ on:
   pull_request:
 jobs:
   test-bot:
+    if: github.actor != 'LimxBot'
     strategy:
       matrix:
         os: [macos-latest]
